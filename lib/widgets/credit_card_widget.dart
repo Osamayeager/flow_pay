@@ -10,7 +10,7 @@ class CreditCardWidget extends StatefulWidget {
   const CreditCardWidget({
     super.key,
     this.cardNumber = '•••• •••• •••• 8492',
-    this.holderName = 'OSAMA YEAGER',
+    this.holderName = 'NOUR AHMED',
     this.expiryDate = '08/29',
     this.balance = 24582.40,
   });

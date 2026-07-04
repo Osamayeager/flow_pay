@@ -37,8 +37,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   children: [
                     CircleAvatar(
                       radius: 36,
-                      backgroundImage: const AssetImage('assets/images/profile.png'),
-                      backgroundColor: AppTheme.primaryPurple.withValues(alpha: 0.3),
+                      backgroundImage: const AssetImage(
+                        'assets/images/profile.png',
+                      ),
+                      backgroundColor: AppTheme.primaryPurple.withValues(
+                        alpha: 0.3,
+                      ),
                     ),
                     const SizedBox(width: 16),
                     const Expanded(
@@ -46,13 +50,20 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Osama Yeager',
-                            style: TextStyle(color: AppTheme.textWhite, fontSize: 20, fontWeight: FontWeight.bold),
+                            'Nour Ahmed',
+                            style: TextStyle(
+                              color: AppTheme.textWhite,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                           SizedBox(height: 4),
                           Text(
-                            'osama.yeager@flowpay.com',
-                            style: TextStyle(color: AppTheme.textSecondary, fontSize: 13),
+                            'nour.ahmed@flowpay.com',
+                            style: TextStyle(
+                              color: AppTheme.textSecondary,
+                              fontSize: 13,
+                            ),
                           ),
                           SizedBox(height: 8),
                           ContainerSpan(),
@@ -88,16 +99,32 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 (val) {
                   setState(() => _darkMode = val);
                   ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('Dark Mode is enforced by default in Flow Pay.')),
+                    const SnackBar(
+                      content: Text(
+                        'Dark Mode is enforced by default in Flow Pay.',
+                      ),
+                    ),
                   );
                 },
               ),
               const SizedBox(height: 24),
 
               _buildSectionHeader('Account Actions'),
-              _buildActionTile('Payment Methods & Cards', Icons.credit_card_rounded, () {}),
-              _buildActionTile('Security & Privacy Settings', Icons.security_rounded, () {}),
-              _buildActionTile('Help & Customer Support', Icons.support_agent_rounded, () {}),
+              _buildActionTile(
+                'Payment Methods & Cards',
+                Icons.credit_card_rounded,
+                () {},
+              ),
+              _buildActionTile(
+                'Security & Privacy Settings',
+                Icons.security_rounded,
+                () {},
+              ),
+              _buildActionTile(
+                'Help & Customer Support',
+                Icons.support_agent_rounded,
+                () {},
+              ),
               const SizedBox(height: 16),
 
               // Logout Button
@@ -108,7 +135,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   style: OutlinedButton.styleFrom(
                     foregroundColor: Colors.redAccent,
                     side: const BorderSide(color: Colors.redAccent),
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(16),
+                    ),
                   ),
                   onPressed: () {
                     ScaffoldMessenger.of(context).showSnackBar(
@@ -116,7 +145,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     );
                   },
                   icon: const Icon(Icons.logout),
-                  label: const Text('Sign Out', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                  label: const Text(
+                    'Sign Out',
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  ),
                 ),
               ),
             ],
@@ -133,13 +165,23 @@ class _ProfileScreenState extends State<ProfileScreen> {
         padding: const EdgeInsets.only(left: 4, bottom: 12),
         child: Text(
           title,
-          style: const TextStyle(color: AppTheme.textSecondary, fontSize: 14, fontWeight: FontWeight.w600),
+          style: const TextStyle(
+            color: AppTheme.textSecondary,
+            fontSize: 14,
+            fontWeight: FontWeight.w600,
+          ),
         ),
       ),
     );
   }
 
-  Widget _buildSwitchTile(String title, String subtitle, IconData icon, bool value, ValueChanged<bool> onChanged) {
+  Widget _buildSwitchTile(
+    String title,
+    String subtitle,
+    IconData icon,
+    bool value,
+    ValueChanged<bool> onChanged,
+  ) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 12),
       child: SwitchListTile.adaptive(
@@ -149,11 +191,24 @@ class _ProfileScreenState extends State<ProfileScreen> {
         activeThumbColor: AppTheme.primaryPurple,
         secondary: Container(
           padding: const EdgeInsets.all(10),
-          decoration: BoxDecoration(color: AppTheme.primaryPurple.withValues(alpha: 0.2), borderRadius: BorderRadius.circular(12)),
+          decoration: BoxDecoration(
+            color: AppTheme.primaryPurple.withValues(alpha: 0.2),
+            borderRadius: BorderRadius.circular(12),
+          ),
           child: Icon(icon, color: AppTheme.primaryPurple, size: 22),
         ),
-        title: Text(title, style: const TextStyle(color: AppTheme.textWhite, fontSize: 15, fontWeight: FontWeight.w600)),
-        subtitle: Text(subtitle, style: const TextStyle(color: AppTheme.textSecondary, fontSize: 12)),
+        title: Text(
+          title,
+          style: const TextStyle(
+            color: AppTheme.textWhite,
+            fontSize: 15,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+        subtitle: Text(
+          subtitle,
+          style: const TextStyle(color: AppTheme.textSecondary, fontSize: 12),
+        ),
         value: value,
         onChanged: onChanged,
       ),
@@ -169,11 +224,25 @@ class _ProfileScreenState extends State<ProfileScreen> {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
         leading: Container(
           padding: const EdgeInsets.all(10),
-          decoration: BoxDecoration(color: AppTheme.cardSurfaceElevated, borderRadius: BorderRadius.circular(12)),
+          decoration: BoxDecoration(
+            color: AppTheme.cardSurfaceElevated,
+            borderRadius: BorderRadius.circular(12),
+          ),
           child: Icon(icon, color: AppTheme.textWhite, size: 22),
         ),
-        title: Text(title, style: const TextStyle(color: AppTheme.textWhite, fontSize: 15, fontWeight: FontWeight.w500)),
-        trailing: const Icon(Icons.arrow_forward_ios_rounded, color: AppTheme.textSecondary, size: 16),
+        title: Text(
+          title,
+          style: const TextStyle(
+            color: AppTheme.textWhite,
+            fontSize: 15,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+        trailing: const Icon(
+          Icons.arrow_forward_ios_rounded,
+          color: AppTheme.textSecondary,
+          size: 16,
+        ),
       ),
     );
   }
@@ -192,7 +261,11 @@ class ContainerSpan extends StatelessWidget {
       ),
       child: const Text(
         'Verified VIP Account',
-        style: TextStyle(color: AppTheme.accentCyan, fontSize: 11, fontWeight: FontWeight.bold),
+        style: TextStyle(
+          color: AppTheme.accentCyan,
+          fontSize: 11,
+          fontWeight: FontWeight.bold,
+        ),
       ),
     );
   }

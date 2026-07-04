@@ -37,7 +37,10 @@ class _HomeDashboardState extends State<HomeDashboard> {
                         height: 48,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          border: Border.all(color: AppTheme.primaryPurple, width: 2),
+                          border: Border.all(
+                            color: AppTheme.primaryPurple,
+                            width: 2,
+                          ),
                           image: const DecorationImage(
                             image: AssetImage('assets/images/profile.png'),
                             fit: BoxFit.cover,
@@ -57,7 +60,7 @@ class _HomeDashboardState extends State<HomeDashboard> {
                           ),
                           SizedBox(height: 2),
                           Text(
-                            'Osama Yeager',
+                            'Nour Ahmed',
                             style: TextStyle(
                               color: AppTheme.textWhite,
                               fontSize: 18,
@@ -76,10 +79,15 @@ class _HomeDashboardState extends State<HomeDashboard> {
                       borderRadius: BorderRadius.circular(14),
                     ),
                     child: IconButton(
-                      icon: const Icon(Icons.notifications_none, color: AppTheme.textWhite),
+                      icon: const Icon(
+                        Icons.notifications_none,
+                        color: AppTheme.textWhite,
+                      ),
                       onPressed: () {
                         ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: Text('No new notifications right now.')),
+                          const SnackBar(
+                            content: Text('No new notifications right now.'),
+                          ),
                         );
                       },
                     ),
@@ -92,7 +100,7 @@ class _HomeDashboardState extends State<HomeDashboard> {
               const CreditCardWidget(
                 balance: 24582.40,
                 cardNumber: '•••• •••• •••• 8492',
-                holderName: 'OSAMA YEAGER',
+                holderName: 'NOUR AHMED',
                 expiryDate: '08/29',
               ),
               const SizedBox(height: 28),
@@ -108,7 +116,9 @@ class _HomeDashboardState extends State<HomeDashboard> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (_) => const TransferScreen()),
+                        MaterialPageRoute(
+                          builder: (_) => const TransferScreen(),
+                        ),
                       );
                     },
                   ),
@@ -117,7 +127,11 @@ class _HomeDashboardState extends State<HomeDashboard> {
                     icon: Icons.call_received_rounded,
                     onTap: () {
                       ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text('Request Money link copied to clipboard!')),
+                        const SnackBar(
+                          content: Text(
+                            'Request Money link copied to clipboard!',
+                          ),
+                        ),
                       );
                     },
                   ),
@@ -126,7 +140,9 @@ class _HomeDashboardState extends State<HomeDashboard> {
                     icon: Icons.add_card_rounded,
                     onTap: () {
                       ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text('Choose your Top Up funding source.')),
+                        const SnackBar(
+                          content: Text('Choose your Top Up funding source.'),
+                        ),
                       );
                     },
                   ),
@@ -135,7 +151,11 @@ class _HomeDashboardState extends State<HomeDashboard> {
                     icon: Icons.receipt_long_rounded,
                     onTap: () {
                       ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text('All monthly bills are paid up to date!')),
+                        const SnackBar(
+                          content: Text(
+                            'All monthly bills are paid up to date!',
+                          ),
+                        ),
                       );
                     },
                   ),
@@ -158,7 +178,9 @@ class _HomeDashboardState extends State<HomeDashboard> {
                   TextButton(
                     onPressed: () {
                       ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text('Showing all transaction history.')),
+                        const SnackBar(
+                          content: Text('Showing all transaction history.'),
+                        ),
                       );
                     },
                     child: const Text(

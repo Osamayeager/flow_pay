@@ -11,8 +11,8 @@ class SignupScreen extends StatefulWidget {
 }
 
 class _SignupScreenState extends State<SignupScreen> {
-  final TextEditingController _nameController = TextEditingController(text: 'Osama Yeager');
-  final TextEditingController _emailController = TextEditingController(text: 'osama.yeager@flowpay.com');
+  final TextEditingController _nameController = TextEditingController(text: 'Nour Ahmed');
+  final TextEditingController _emailController = TextEditingController(text: 'nour.ahmed@flowpay.com');
   final TextEditingController _passwordController = TextEditingController(text: 'secret1234');
   bool _obscurePassword = true;
 

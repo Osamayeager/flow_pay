@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../core/theme/app_theme.dart';
 import '../models/contact.dart';
+import 'main_nav_screen.dart';
 
 class TransferScreen extends StatefulWidget {
   const TransferScreen({super.key});
@@ -88,7 +89,14 @@ class _TransferScreenState extends State<TransferScreen> {
                     ),
                     onPressed: () {
                       Navigator.pop(context); // Close dialog
-                      Navigator.pop(context); // Return to dashboard
+                      if (Navigator.canPop(context)) {
+                        Navigator.pop(context); // Return to dashboard if pushed
+                      } else {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(builder: (_) => const MainNavScreen()),
+                        );
+                      }
                     },
                     child: const Text('Back to Dashboard', style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.w600)),
                   ),
@@ -107,10 +115,13 @@ class _TransferScreenState extends State<TransferScreen> {
       backgroundColor: AppTheme.darkBackground,
       appBar: AppBar(
         title: const Text('Send Money'),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_new_rounded, color: Colors.white),
-          onPressed: () => Navigator.pop(context),
-        ),
+        automaticallyImplyLeading: false,
+        leading: Navigator.canPop(context)
+            ? IconButton(
+                icon: const Icon(Icons.arrow_back_ios_new_rounded, color: Colors.white),
+                onPressed: () => Navigator.pop(context),
+              )
+            : null,
       ),
       body: SafeArea(
         child: Column(

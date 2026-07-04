@@ -8,7 +8,7 @@ class AppTheme {
   static const Color cardSurfaceElevated = Color(0xFF272B40);
 
   // Accents & Gradients
-  static const Color primaryPurple = Color(0xFF6C5DD3);
+  static const Color primaryPurple = Color(0xff0066ff);
   static const Color accentCyan = Color(0xFF00C48C);
   static const Color accentOrange = Color(0xFFFF974A);
   static const Color accentPink = Color(0xFFFF5C8D);
@@ -35,39 +35,40 @@ class AppTheme {
     return ThemeData(
       brightness: Brightness.dark,
       scaffoldBackgroundColor: darkBackground,
-      primaryColor: primaryPurple,
+      primaryColor: const Color.fromARGB(255, 44, 70, 240),
       colorScheme: const ColorScheme.dark(
         primary: primaryPurple,
         secondary: accentCyan,
         surface: cardSurface,
       ),
-      textTheme: GoogleFonts.outfitTextTheme(ThemeData.dark().textTheme).copyWith(
-        displayLarge: GoogleFonts.outfit(
-          color: textWhite,
-          fontSize: 32,
-          fontWeight: FontWeight.bold,
-        ),
-        headlineMedium: GoogleFonts.outfit(
-          color: textWhite,
-          fontSize: 24,
-          fontWeight: FontWeight.w700,
-        ),
-        titleLarge: GoogleFonts.outfit(
-          color: textWhite,
-          fontSize: 18,
-          fontWeight: FontWeight.w600,
-        ),
-        bodyLarge: GoogleFonts.outfit(
-          color: textWhite,
-          fontSize: 16,
-          fontWeight: FontWeight.w400,
-        ),
-        bodyMedium: GoogleFonts.outfit(
-          color: textSecondary,
-          fontSize: 14,
-          fontWeight: FontWeight.w400,
-        ),
-      ),
+      textTheme: GoogleFonts.outfitTextTheme(ThemeData.dark().textTheme)
+          .copyWith(
+            displayLarge: GoogleFonts.outfit(
+              color: textWhite,
+              fontSize: 32,
+              fontWeight: FontWeight.bold,
+            ),
+            headlineMedium: GoogleFonts.outfit(
+              color: textWhite,
+              fontSize: 24,
+              fontWeight: FontWeight.w700,
+            ),
+            titleLarge: GoogleFonts.outfit(
+              color: textWhite,
+              fontSize: 18,
+              fontWeight: FontWeight.w600,
+            ),
+            bodyLarge: GoogleFonts.outfit(
+              color: textWhite,
+              fontSize: 16,
+              fontWeight: FontWeight.w400,
+            ),
+            bodyMedium: GoogleFonts.outfit(
+              color: textSecondary,
+              fontSize: 14,
+              fontWeight: FontWeight.w400,
+            ),
+          ),
       appBarTheme: AppBarTheme(
         backgroundColor: Colors.transparent,
         elevation: 0,
