@@ -39,9 +39,7 @@ class _HomeDashboardState extends State<HomeDashboard> {
                           shape: BoxShape.circle,
                           border: Border.all(color: AppTheme.primaryPurple, width: 2),
                           image: const DecorationImage(
-                            image: NetworkImage(
-                              'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80',
-                            ),
+                            image: AssetImage('assets/images/profile.png'),
                             fit: BoxFit.cover,
                           ),
                         ),

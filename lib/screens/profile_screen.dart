@@ -37,9 +37,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   children: [
                     CircleAvatar(
                       radius: 36,
-                      backgroundImage: const NetworkImage(
-                        'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80',
-                      ),
+                      backgroundImage: const AssetImage('assets/images/profile.png'),
                       backgroundColor: AppTheme.primaryPurple.withValues(alpha: 0.3),
                     ),
                     const SizedBox(width: 16),
@@ -142,12 +140,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
   }
 
   Widget _buildSwitchTile(String title, String subtitle, IconData icon, bool value, ValueChanged<bool> onChanged) {
-    return Container(
-      margin: const EdgeInsets.only(bottom: 12),
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-      decoration: BoxDecoration(color: AppTheme.cardSurface, borderRadius: BorderRadius.circular(18)),
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 12),
       child: SwitchListTile.adaptive(
-        contentPadding: EdgeInsets.zero,
+        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        tileColor: AppTheme.cardSurface,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
         activeThumbColor: AppTheme.primaryPurple,
         secondary: Container(
           padding: const EdgeInsets.all(10),
@@ -163,11 +161,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
   }
 
   Widget _buildActionTile(String title, IconData icon, VoidCallback onTap) {
-    return Container(
-      margin: const EdgeInsets.only(bottom: 12),
-      decoration: BoxDecoration(color: AppTheme.cardSurface, borderRadius: BorderRadius.circular(18)),
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 12),
       child: ListTile(
         onTap: onTap,
+        tileColor: AppTheme.cardSurface,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
         leading: Container(
           padding: const EdgeInsets.all(10),
           decoration: BoxDecoration(color: AppTheme.cardSurfaceElevated, borderRadius: BorderRadius.circular(12)),

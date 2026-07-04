@@ -158,7 +158,7 @@ class _TransferScreenState extends State<TransferScreen> {
                         children: [
                           CircleAvatar(
                             radius: 22,
-                            backgroundImage: NetworkImage(contact.avatarUrl),
+                            backgroundImage: AssetImage(contact.avatarPath),
                           ),
                           const SizedBox(height: 6),
                           Text(
